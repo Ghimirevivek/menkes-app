@@ -1,12 +1,12 @@
-import { COLORS } from "@/theme";
-import React from "react";
-import { Modal, View, StyleSheet } from "react-native";
+import { COLORS } from '@/theme';
+import React from 'react';
+import { Modal, View, StyleSheet } from 'react-native';
 
 type ModalWrapperProps = {
   visible: boolean;
   onRequestClose: () => void;
   children: React.ReactNode;
-  animationType?: "none" | "slide" | "fade";
+  animationType?: 'none' | 'slide' | 'fade';
   overlayStyle?: object; // Optional styles for the overlay
 };
 
@@ -14,7 +14,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
   visible,
   onRequestClose,
   children,
-  animationType = "slide",
+  animationType = 'slide',
   overlayStyle = {},
 }) => {
   return (
@@ -32,8 +32,8 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
 const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
-    marginTop: 40,
-    justifyContent: "flex-end",
+    marginTop: 20,
+    justifyContent: 'flex-end',
     backgroundColor: COLORS.transparent,
   },
 });

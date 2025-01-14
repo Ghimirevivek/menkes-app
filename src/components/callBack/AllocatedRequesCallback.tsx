@@ -1,10 +1,10 @@
-import { COLORS, FONTS } from "@/theme";
-import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import { useDispatch, useSelector } from "react-redux";
-import { closeModal } from "@/redux/slices/modalSlice";
-import FiltersHeader from "@/components/header/FiltersHeader";
+import { COLORS, FONTS } from '@/theme';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModal } from '@/redux/slices/modalSlice';
+import FiltersHeader from '@/components/header/FiltersHeader';
 
 const AllocatedRequesCallback = () => {
   const dispatch = useDispatch();
@@ -15,8 +15,8 @@ const AllocatedRequesCallback = () => {
   return (
     <View style={styles.container}>
       <FiltersHeader
-        title="Request Callback"
-        leftButton="Close"
+        title='Request Callback'
+        leftButton='Close'
         setModalVisible={handleCloseModal}
       />
 
@@ -33,7 +33,7 @@ const AllocatedRequesCallback = () => {
             <Text style={styles.typeText}>Allocated Units Inquiry</Text>
           </View>
           <View>
-            <AntDesign name="down" color={COLORS.black} size={20} />
+            <AntDesign name='down' color={COLORS.black} size={20} />
           </View>
         </View>
 
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     backgroundColor: COLORS.white,
     height: 60,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginTop: 0,
   },
   headerButton: {
@@ -96,9 +96,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.disablebutton,
     backgroundColor: COLORS.white,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     marginBottom: 16,
   },
   typetitle: {
@@ -125,8 +125,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.disablebutton,
     backgroundColor: COLORS.white,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     // alignItems: "center",
     marginBottom: 16,
   },

@@ -1,30 +1,31 @@
-import FileIcon from "@/assets/icons/FileIcon";
-import OptionCard from "@/components/cards/OptionCard";
-import WelcomeSection from "@/components/header/WelcomeSection";
-import { setUserNull } from "@/redux/slices/authSlice";
-import { setStep } from "@/redux/slices/stepSlice";
-import { COLORS, FONTS } from "@/theme";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
-import Swiper from "react-native-swiper";
-import Feather from "@expo/vector-icons/Feather";
-import Octicons from "@expo/vector-icons/Octicons";
-import { useDispatch, useSelector } from "react-redux";
-import { StackParamList } from "@/navigator/stack/Stack.typeDefs";
-import Button from "@/components/Button/Button";
-import ModalWrapper from "@/components/modal/ModalWrapper";
-import ProjectFilter from "@/components/Filters/ProjectFilter";
-import AllocatedRequesCallback from "@/components/callBack/AllocatedRequesCallback";
-import { closeModal } from "@/redux/slices/modalSlice";
-import SearchModal from "@/components/modal/SearchModal";
+import FileIcon from '@/assets/icons/FileIcon';
+import OptionCard from '@/components/cards/OptionCard';
+import WelcomeSection from '@/components/header/WelcomeSection';
+import { setUserNull } from '@/redux/slices/authSlice';
+import { setStep } from '@/redux/slices/stepSlice';
+import { COLORS, FONTS } from '@/theme';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import Swiper from 'react-native-swiper';
+import Feather from '@expo/vector-icons/Feather';
+import Octicons from '@expo/vector-icons/Octicons';
+import { useDispatch, useSelector } from 'react-redux';
+import { StackParamList } from '@/navigator/stack/Stack.typeDefs';
+import Button from '@/components/Button/Button';
+import ModalWrapper from '@/components/modal/ModalWrapper';
+import ProjectFilter from '@/components/Filters/ProjectFilter';
+import AllocatedRequesCallback from '@/components/callBack/AllocatedRequesCallback';
+// import { closeModal } from '@/redux/slices/modalSlice';
+import { closeModal } from '@/redux/slices/searchModalSlice';
+import SearchModal from '@/components/modal/SearchModal';
 
 const Home = () => {
   const navigation = useNavigation<NavigationProp<StackParamList>>();
   const dispatch = useDispatch();
   const isModalOpen = useSelector((state: any) => state.modal.isOpen);
 
-  const [viewMode, setViewMode] = useState("project");
+  const [viewMode, setViewMode] = useState('project');
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -59,31 +60,31 @@ const Home = () => {
         </Swiper>
       </View>
 
-      <WelcomeSection title="Welcome David" text="Menkes ID: 15550" />
+      <WelcomeSection title='Welcome David' text='Menkes ID: 15550' />
 
       <View style={styles.options}>
         <OptionCard
-          onPress={() => navigation.navigate("AllocatedUnits")}
-          icon={<Feather name="folder" size={22} color={COLORS.primary} />}
-          label="Allocated Units"
+          onPress={() => navigation.navigate('AllocatedUnits')}
+          icon={<Feather name='folder' size={22} color={COLORS.primary} />}
+          label='Allocated Units'
         />
         <OptionCard
-          onPress={() => navigation.navigate("FirmUnits")}
+          onPress={() => navigation.navigate('FirmUnits')}
           icon={
-            <Octicons name="check-circle" size={22} color={COLORS.primary} />
+            <Octicons name='check-circle' size={22} color={COLORS.primary} />
           }
-          label="Firm Units"
-          badge="1"
+          label='Firm Units'
+          badge='1'
         />
         <OptionCard
-          onPress={() => navigation.navigate("WorkSheetUnits")}
+          onPress={() => navigation.navigate('WorkSheetUnits')}
           icon={<FileIcon />}
-          label="Worksheets"
+          label='Worksheets'
         />
       </View>
 
       <View style={{ padding: 16 }}>
-        <Button type="primary" label="Submit Worksheet" icon="plus" />
+        <Button type='primary' label='Submit Worksheet' icon='plus' />
       </View>
 
       <ModalWrapper
@@ -110,20 +111,20 @@ const styles = StyleSheet.create({
   promotionCard: {
     margin: 16,
     borderRadius: 8,
-    position: "relative",
+    position: 'relative',
     marginHorizontal: 10,
   },
   promotionImage: {
-    width: "100%",
+    width: '100%',
     height: 260,
     borderRadius: 8,
   },
   promotionContent: {
     padding: 16,
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
     left: 0,
-    width: "90%",
+    width: '90%',
   },
   promotionTitle: {
     fontSize: 16,
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   promotionDescription: {
-    textAlign: "left",
+    textAlign: 'left',
     fontSize: 14,
     fontWeight: 400,
     lineHeight: 20,
@@ -143,13 +144,13 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   validDate: {
-    width: "45%",
+    width: '45%',
     backgroundColor: COLORS.white,
     borderRadius: 50,
     paddingVertical: 5,
-    alignItems: "center",
+    alignItems: 'center',
     marginTop: 10,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 12,
     fontWeight: 400,
     lineHeight: 20,
@@ -161,8 +162,8 @@ const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
     // marginTop: 40,
-    justifyContent: "flex-end",
-    backgroundColor: "#FFF",
+    justifyContent: 'flex-end',
+    backgroundColor: '#FFF',
   },
 });
 

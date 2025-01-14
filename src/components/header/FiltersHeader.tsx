@@ -1,14 +1,14 @@
 // Header.tsx
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { COLORS, FONTS } from "@/theme";
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { COLORS, FONTS } from '@/theme';
 
 type HeaderProps = {
   setModalVisible: (visible: boolean) => void;
   title: string;
   subtitle?: string;
-  leftButton?: string | "Close";
-  rightButton?: string | "reset";
+  leftButton?: string | 'Close';
+  rightButton?: string | 'reset';
   onRightButtonPress?: () => void;
 };
 
@@ -17,7 +17,7 @@ const FiltersHeader = ({
   title,
   subtitle,
   leftButton,
-  rightButton = "Reset",
+  rightButton = 'Reset',
   onRightButtonPress,
 }: HeaderProps) => (
   <View style={styles.header}>
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     backgroundColor: COLORS.white,
     height: 60,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   headerButton: {
     fontSize: 16,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     lineHeight: 20,
     color: COLORS.gray,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FONTS.calibri.regular,
   },
 });
